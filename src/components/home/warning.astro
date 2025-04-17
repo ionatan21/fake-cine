@@ -1,0 +1,34 @@
+---
+const warnings = [
+  {
+    title: "Atención si compras por SINPE MÓVIL",
+    content: `El método de pago por medio de SINPE MÓVIL estará habilitado para la preventa de todas nuestras películas.
+Sin embargo, para preestrenos y semana de estreno no estará disponible debido a la gran cantidad de mensajes que normalmente llegan en esos momentos en específico.
+Les recomendamos comprar sus boletos con anticipación.`,
+    signature: "Atentamente, La Gerencia.",
+  },
+  {
+    title: "Aviso Importante",
+    content: `FakePacific Cine le recuerda, sobre nuestras reglas y políticas, para ingresar a nuestras instalaciones, el cual debe considerar antes de comprar el boleto.
+Es totalmente prohibido, el ingreso de bebidas y comidas ajenas al cine, adentro y afuera del lobby y en las salas. (Lo anterior incluye botellas personales de agua).
+Todo bolso, mochila, maletas, sombrillas grandes, cascos, no pueden ingresar a sala por seguridad. Sin excepción, los bolsos de mano, serán revisados antes de ingresar a sala.
+De lo contrario, Nos reservamos el derecho de Admisión.`,
+    signature: "Saludos cordiales, La Gerencia.",
+  },
+];
+---
+
+<section class="w-screen h-fit bg-[#f60] text-[#343a40] p-6 md:p-12">
+  <h2 class="text-xl text-white font-bold mb-6 text-center">AVISOS IMPORTANTES</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      warnings.map(({ title, content, signature }) => (
+        <div class="bg-white shadow-md rounded-lg p-4 md:p-6 relative">
+          <h3 class="text-lg font-semibold mb-2">{title}</h3>
+          <p class="text-sm leading-relaxed mb-4">{content}</p>
+          <p class="text-sm absolute right-0 bottom-0 m-4 font-bold text-right">{signature}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

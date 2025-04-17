@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import type { APIContext } from "astro";
+import MovieDetail from "@/components/movie/MovieDetail";
+import Layout from "@/layouts/Layout.astro";
+import '@/styles/globals.css'
+
+export async function getStaticPaths() {
+  const movies = await getCollection("movies");
+
+  return movies.map((movie) => ({
+    params: { id: movie.id },
+    props: { movie },
+  }));
+}
+
+const { movie } = Astro.props;
+---
+
+<Layout>
+  <MovieDetail
+    client:visible
+    movie={{
+      id: movie.id,
+      title: movie.data.title,
+      movieslug: movie.data.movieslug,
+      language: movie.data.language,
+      duration: movie.data.duration,
+      format: movie.data.format,
+      posterURL: movie.data.posterURL,
+      trailerURL: movie.data.trailerURL,
+      body: movie.body,
+      age: movie.data.agelimit,
+      genre: movie.data.genre,
+      premiere_date: movie.data.premiere_date,
+      released: movie.data.released,
+      schedule: movie.data.schedule,
+    }}
+  />
+</Layout>
