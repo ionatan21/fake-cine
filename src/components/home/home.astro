@@ -1,3 +1,7 @@
+---
+import ResponsiveVideo from "../ui/ResponsiveVideo";
+---
+
 <article
   class="w-screen z-10 h-screen relative flex flex-col justify-center items-center bg-gray-800 text-white"
 >
@@ -26,10 +30,9 @@
     </button>
   </section>
 
-  <video
-    muted
-    autoplay
-    loop
-    class="w-full aspect-video absolute h-full select-none object-cover z-0 opacity-75"
-    src="cinema.mp4"></video>
+  <ResponsiveVideo
+    client:load
+    desktopSrc="https://res.cloudinary.com/ds8cp2nxp/video/upload/v1744943540/FakeCIne/cinema_bus5xj.webm"
+    mobileSrc="https://res.cloudinary.com/ds8cp2nxp/video/upload/v1744943604/FakeCIne/cinema-mobile_etl8lg.webm"
+  />
 </article>
