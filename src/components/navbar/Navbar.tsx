@@ -16,7 +16,7 @@ const navItems = [
   },
   {
     name: "Películas",
-    href: "/services",
+    href: "/billboard",
     content: [
       { label: "Cartelera", href: "/billboard" },
       { label: "Próximos estrenos", href: "/premieres" },
