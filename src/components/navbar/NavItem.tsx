@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 interface NavItemProps {
   name: string;
   href: string;
-  content: string[];
+  content: { label: string; href: string }[];
   isHovered: boolean;
   onHover: () => void;
   onLeave: () => void;
@@ -42,15 +42,13 @@ export default function NavItem({
           animate={{ height: isHovered ? "auto" : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          {content.map((item, index) => {
-            return (
-              <a href="#" key={index}>
-                <p className="text-sm text-left w-full x-2 relative my-2 cursor-pointer opacity-80 hover:opacity-100">
-                  {item}
-                </p>
-              </a>
-            );
-          })}
+          {content.map((item, index) => (
+            <a href={item.href} key={index}>
+              <p className="text-sm text-left w-full px-2 my-2 cursor-pointer opacity-80 hover:opacity-100">
+                {item.label}
+              </p>
+            </a>
+          ))}
         </motion.div>
       )}
     </li>

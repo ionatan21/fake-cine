@@ -1,0 +1,53 @@
+---
+// promos.astro
+import Layout from "../layouts/Layout.astro";
+import "@/styles/globals.css";
+import ReactNavbar from "../components/navbar/Navbar";
+import { PromoCard } from "@/components/ui/PromoCard";
+
+const promos = [
+  {
+    Id: "Miércoles 2x1",
+    title: "Publicidad en Pantalla",
+    body: "Todos los miércoles vení con tu pareja, amigo o familiar y solo pagás una entrada. ¡Disfrutá del doble de cine por el mismo precio! Esta promoción aplica para todas las funciones en salas tradicionales.",
+    image:
+      "https://res.cloudinary.com/ds8cp2nxp/image/upload/v1744961407/FakeCIne/Mi%C3%A9rcoles_2x1_ddk6dk.webp",
+  },
+  {
+    Id: "2",
+    title: "Jueves de palomitas",
+    body: "Cada jueves, por la compra de una entrada, obtené <strong>un balde mediano de palomitas GRATIS</strong>. Perfecto para acompañar tu película favorita. Disponible en todas las funciones y salas.",
+    image:
+      "https://res.cloudinary.com/ds8cp2nxp/image/upload/v1744961405/FakeCIne/Jueves_de_Palomitas_rgggbg.webp",
+  },
+];
+---
+
+<Layout title="Promociones">
+  <ReactNavbar client:visible />
+  <section
+    class="w-screen mt-6 z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6"
+  >
+    <h1 class="text-4xl mt-8 sm:text-5xl font-bold text-center mb-12">
+      Promociones
+    </h1>
+
+    <div
+      class="flex flex-col md:flex-row justify-center items-center gap-6 max-w-7xl w-full"
+    >
+      {
+        promos.map((service) => (
+          <PromoCard
+            client:load
+            Promo={{
+              Id: service.Id,
+              title: service.title,
+              body: service.body,
+              image: service.image,
+            }}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

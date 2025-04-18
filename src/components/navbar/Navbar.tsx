@@ -5,20 +5,43 @@ import { useMediaQuery } from "../../utils/useMediaQuery";
 import "./Navbar.css";
 
 const navItems = [
-  { name: "Inicio", href: "/", content: [""] },
-  { name: "Nosotros", href: "/about", content: ["Ubicación", "Historia"] },
+  { name: "Inicio", href: "/#home", content: [] },
+  {
+    name: "Nosotros",
+    href: "/about",
+    content: [
+      { label: "Ubicación", href: "/about#ubicacion" },
+      { label: "Historia", href: "/about#historia" },
+    ],
+  },
   {
     name: "Películas",
     href: "/services",
-    content: ["Cartelera", "Próximos estrenos"],
+    content: [
+      { label: "Cartelera", href: "/billboard" },
+      { label: "Próximos estrenos", href: "/premieres" },
+    ],
   },
   {
     name: "Promociones",
     href: "/promos",
-    content: ["Miércoles 2x1", "Jueves de palomitas"],
+    content: [
+      { label: "Miércoles 2x1", href: "/promos" },
+      { label: "Jueves de palomitas", href: "/promos" },
+    ],
   },
-  { name: "Galería", href: "/galeria", content: ["Nuestras instalaciones"] },
-  { name: "Contáctenos", href: "/contacto", content: ["Envíanos un mensaje"] },
+  {
+    name: "Galería",
+    href: "/galeria",
+    content: [
+      { label: "Nuestras instalaciones", href: "/galeria#instalaciones" },
+    ],
+  },
+  {
+    name: "Contáctenos",
+    href: "/contacto",
+    content: [{ label: "Envíanos un mensaje", href: "/contacto#mensaje" }],
+  },
 ];
 
 export default function ReactNavbar() {
@@ -43,12 +66,13 @@ export default function ReactNavbar() {
       }  text-white fixed w-screen top-0 left-0 z-50 flex flex-col md:flex-row justify-end md:justify-end items-end`}
     >
       {/* Logo */}
-      <img
-        className="h-24 w-24 absolute left-0 top-0 md:h-20 ml-4 md:ml-14 mt-4 z-20"
-        src="logo-fake.webp"
-        alt="logo-cine"
-      />
-
+      <a href="/#home">
+        <img
+          className="h-24 opacity-85 hover:opacity-100 w-24 absolute left-0 top-0 md:h-20 ml-4 md:ml-14 mt-4 z-20"
+          src="/logo-fake.webp"
+          alt="logo-cine"
+        />
+      </a>
       {/* Icono de menú para móviles */}
       <button
         className="block md:hidden text-white text-2xl p-4 overflow-hidden"

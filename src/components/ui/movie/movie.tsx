@@ -19,7 +19,6 @@ interface MoviesProps {
 
 const Movie: React.FC<MoviesProps> = ({ movie }) => {
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
-  console.log(hoveredIndex);
   return (
     <a
       href={`/pelicula/${movie.id}`}

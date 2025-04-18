@@ -1,15 +1,46 @@
 ---
-import '@/styles/globals.css'
+import ReactNavbar from "@/components/navbar/Navbar";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
 ---
 
-<html class="bg-black overflow-x-hidden">
-  <head>
-    <title class="bg-red-500">About Us</title>
-  </head>
-  <body>
-    <h1>About Us</h1>
-    <p>
-      Welcome to the About page! Here is some information about our project.
-    </p>
-  </body>
-</html>
+<Layout>
+  <ReactNavbar client:visible />
+  <section
+    class="bg-[#f60] h-screen flex flex-col justify-center items-center text-white px-8 py-16 overflow-x-hidden"
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-6">Sobre nosotros</h1>
+      <p class="text-lg mb-4">
+        ¡Bienvenidos a nuestra versión alternativa del mundo del cine! 🎬🍿
+      </p>
+      <p class="text-base mb-4">
+        Esta es una <strong>página web ficticia</strong>, desarrollada por <a
+          href="https://portfolio-jonatan-barrios.vercel.app/"
+          target="_blank"
+          class="text-gray-200 underline hover:text-white">Jonatan Barrios</a
+        > como un ejercicio creativo y personal para mejorar habilidades en desarrollo
+        web y diseño frontend.
+      </p>
+      <p class="text-base mb-4">
+        El proyecto consiste en una <strong
+          >reimaginación libre y sin fines comerciales</strong
+        > del sitio original de <a
+          href="https://pacificcinemas.com/index.php"
+          target="_blank"
+          class="text-gray-200 underline hover:text-white">Pacific Cinemas</a
+        >, realizada únicamente por diversión, aprendizaje y pasión por el cine.
+      </p>
+      <p class="text-base mb-4">
+        Todos los contenidos, imágenes y promociones presentados aquí son
+        totalmente ficticios y no tienen ninguna relación con la empresa real.
+        Esta página no representa información oficial ni está vinculada a ningún
+        cine existente.
+      </p>
+      <p class="text-base">
+        ¡Gracias por visitar este proyecto experimental! Espero que lo disfrutes
+        tanto como yo disfrute crearlo.
+      </p>
+    </div>
+  </section>
+</Layout>

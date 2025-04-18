@@ -1,9 +1,12 @@
 ---
 import ResponsiveVideo from "../ui/ResponsiveVideo";
+import ActionButton from "../ui/ActionButton";
+import ActionLink from "../ui/ActionLink";
 ---
 
 <article
   class="w-screen z-10 h-screen relative flex flex-col justify-center items-center bg-gray-800 text-white"
+  id="home"
 >
   <div class="z-10 font-sans space-y-10 mb-4 text-center">
     <h1
@@ -18,16 +21,14 @@ import ResponsiveVideo from "../ui/ResponsiveVideo";
   <section
     class="z-10 font-sans grid grid-cols-1 md:grid-cols-2 m-4 p-4 gap-10 place-content-center w-[200px] md:w-[400px]"
   >
-    <button
-      class="bg-black bg-opacity-20 hover:bg-opacity-100 hover:scale-[1.1] transition-all ease-in border-white border text-white px-4 py-2 rounded-lg"
+    <ActionButton
+      onClick={() => (window.location.href = "/billboard")}
+      client:load
     >
       Comprar boletos
-    </button>
-    <button
-      class="bg-black bg-opacity-20 hover:bg-opacity-100 hover:scale-[1.1] transition-all ease-in border-white border text-white px-4 py-2 rounded-lg"
-    >
-      Ver cartelera
-    </button>
+    </ActionButton>
+
+    <ActionLink href="/billboard" client:load> Ver cartelera </ActionLink>
   </section>
 
   <ResponsiveVideo
