@@ -1,6 +1,54 @@
-<section class="w-screen z-10 h-screen relative flex flex-col justify-center items-center bg-gray-800 text-white"> 
-    <h1>Servicios</h1>
-    <p>Disfruta de nuestros servicios</p>
-    <button>Ver servicios</button>
-    <button>Reservar</button>
+---
+import Id from "@/pages/pelicula/[id].astro";
+import { ServiceCard } from "../ui/ServiceCard";
+
+const services = [
+  {
+    Id: "1",
+    title: "Publicidad en Pantalla",
+    body: "De a conocer su negocio mediante un video corto antes de la presentación de las películas más vistas en la zona y potencie su negocio.",
+    image: "https://res.cloudinary.com/ds8cp2nxp/image/upload/v1744940613/FakeCIne/movies-cinema-film_stock1_ohuq69.webp",
+  },
+  {
+    Id: "2",
+    title: "Reuniones, Conferencias y más",
+    body: "El mejor lugar y con el mejor ambiente para efectuar sus encuentros ejecutivos está en Fake Cinemas.",
+    image: "https://res.cloudinary.com/ds8cp2nxp/image/upload/v1744941499/FakeCIne/Internal-business-meeting_2_pxqbxr.webp",
+  },
+  {
+    Id: "3",
+    title: "Parqueo Amplio y Seguro",
+    body: "Para que usted y su familia disfruten con total tranquilidad de una bonita tarde en nuestras instalaciones le ofrecemos un amplio parqueo con seguridad constante.",
+    image: "https://res.cloudinary.com/ds8cp2nxp/image/upload/v1744941467/FakeCIne/istockphoto-480652712-612x612_ayftl5.webp",
+  },
+];
+---
+
+<section
+  class="w-full min-h-screen bg-gray-800 text-white py-16 px-4 flex flex-col justify-center items-center"
+>
+  <h1 class="text-4xl font-bold mb-4 text-center">Otros Servicios</h1>
+  <p class="text-lg mb-12 text-center max-w-xl">
+    Más allá del cine, ¡te ofrecemos comodidades para cada ocasión!
+  </p>
+
+  <div
+    class="grid  is grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full"
+  >
+    {
+      services.map((service) => (
+        <ServiceCard
+          client:load
+          service={{
+            Id: service.Id,
+            title: service.title,
+            body: service.body,
+            image: service.image,
+          }}
+        />
+      ))
+    }
+  </div>
 </section>
+
+
