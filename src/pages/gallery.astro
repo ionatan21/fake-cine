@@ -1,0 +1,11 @@
+---
+import GalleryImages from "@/components/gallery/GalleryImages";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import ReactNavbar from "@/components/navbar/Navbar";
+---
+
+<Layout>
+    <ReactNavbar client:visible />
+    <GalleryImages client:load />
+</Layout>

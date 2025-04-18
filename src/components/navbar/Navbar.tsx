@@ -32,7 +32,7 @@ const navItems = [
   },
   {
     name: "Galería",
-    href: "/galeria",
+    href: "/gallery",
     content: [
       { label: "Nuestras instalaciones", href: "/galeria#instalaciones" },
     ],
