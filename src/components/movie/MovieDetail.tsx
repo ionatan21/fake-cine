@@ -80,7 +80,7 @@ const MovieDetail = ({ movie }: MovieProps) => {
                     </td>
                     <td className="py-2 align-top">
                       <span className="font-semibold block sm:inline">
-                        ¿Ya en cartelera?:
+                        ¿Ya en cartelera?
                       </span>{" "}
                       <span
                         className={`inline-block px-2 py-1 rounded font-medium ${
