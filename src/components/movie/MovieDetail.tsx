@@ -23,7 +23,7 @@ const MovieDetail = ({ movie }: MovieProps) => {
 
 
   return (
-    <article className="w-screen z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6">
+    <article className="w-screen z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white md:p-6">
       <section className="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen py-10 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-start">
           <motion.div
