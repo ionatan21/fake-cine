@@ -11,9 +11,9 @@ const movies = await getCollection("movies");
 <Layout>
   <ReactNavbar client:visible />
   <section
-    class="w-screen mt-6 z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6"
+    class="w-screen z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6"
   >
-    <h1 class="text-4xl mt-10 font-bold mb-8">Cartelera</h1>
+    <h1 class="text-4xl mt-14 font-bold mb-8">Cartelera</h1>
     <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-1 w-full max-w-7xl">
       {
         movies
