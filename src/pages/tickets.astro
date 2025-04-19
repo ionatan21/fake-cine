@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import ReactNavbar from "@/components/navbar/Navbar";
+import Footer from "@/components/home/footer.astro";
+import TheaterSeating from "@/components/Tickets/TheaterSeating";
+
+const movies = await getCollection("movies");
+---
+
+<Layout>
+  <ReactNavbar client:visible />
+  <TheaterSeating client:load/>
+  <Footer />
+</Layout>
