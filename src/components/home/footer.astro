@@ -1,6 +1,88 @@
-  <footer
-    class="w-screen z-10 h-screen relative flex flex-col justify-center items-center bg-gray-800 text-white"
+---
+import AnimatedCounter from "../ui/AnimatedCounter";
+---
+
+<footer class="w-full bg-gray-900 text-white py-12">
+  <section
+    class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
   >
-    <h1>Footer</h1>
-    <p>© 2025</p>
-  </footer>
+    <!-- Logo e introducción -->
+    <div>
+      <img src="/logo-fake.webp" alt="logo FakeCine" class="w-40 mb-4" />
+      <p class="text-sm text-gray-300 leading-relaxed">
+        FakeCine es una plataforma de cine en línea creada por diversión, que
+        reimagina la página de <a
+          href="https://pacificcinemas.com/index.php"
+          class="underline hover:text-yellow-400">Pacific Cinemas</a
+        >. Este proyecto fue desarrollado por
+        <a
+          href="https://portfolio-jonatan-barrios.vercel.app/"
+          target="_blank"
+          class="text-[#f60] hover:underline">Jonatan Barrios</a
+        > como práctica de desarrollo web. ¡Nada aquí es real!
+      </p>
+    </div>
+
+    <!-- Cartelera -->
+    <div class="flex flex-col h-full items-center justify-between text-center">
+      <img
+        src="https://res.cloudinary.com/ds8cp2nxp/image/upload/v1745022757/FakeCIne/movie-recorder-svgrepo-com_n8glov.svg"
+        alt="Películas en cartelera"
+        class="w-24 mb-4"
+      />
+      <h2 class="text-lg font-semibold mb-2">Películas en cartelera</h2>
+
+      <p class="text-sm text-gray-400">
+        Descubre los títulos más recientes y populares.
+      </p>
+      <AnimatedCounter
+        client:load
+        target={8}
+        className="text-6xl font-bold text-[#f60]"
+      />
+    </div>
+
+    <!-- Estrenos -->
+    <div class="flex flex-col h-full items-center justify-between text-center">
+      <img
+        src="https://res.cloudinary.com/ds8cp2nxp/image/upload/v1745022758/FakeCIne/popcorn-svgrepo-com_jvrurp.svg"
+        alt="Próximos estrenos"
+        class="w-24 mb-4"
+      />
+      <h2 class="text-lg font-semibold mb-2">Próximos estrenos</h2>
+
+      <p class="text-sm text-gray-400">
+        No te pierdas lo que viene próximamente.
+      </p>
+      <AnimatedCounter
+        client:load
+        target={9}
+        className="text-6xl font-bold text-[#f60]"
+      />
+    </div>
+
+    <!-- Contacto -->
+    <div class="flex flex-col h-full items-center justify-between text-center">
+      <h2 class="text-lg font-semibold mb-4">Contáctenos</h2>
+      <p class="text-sm text-gray-300">Teléfonos:</p>
+      <ul class="text-sm flex flex-row md:flex-col justify-center items-center text-white mb-2 m-4 gap-2">
+        <li class="bg-[#f60] max-w-fit p-2 opacity-90 hover:opacity-100 rounded-xl"><a href="tel:+506 1234 5678">+506 1234 5678</a></li>
+        <li class="bg-[#f60] max-w-fit p-2 opacity-90 hover:opacity-100 rounded-xl"><a href="tel:+506 8765 4321">+506 8765 4321</a></li>
+      </ul>
+      <p class="text-sm text-gray-300 mb-2">
+        También puede enviarnos un mensaje desde nuestra sección de contacto.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-block mt-2 px-4 py-2 bg-[#f60] opacity-90 text-white rounded-xl hover:opacity-100 transition"
+      >
+        Ir a contacto
+      </a>
+    </div>
+  </section>
+
+  <!-- Línea inferior -->
+  <div class="text-center mt-12 text-xs text-gray-500">
+    © 2025 FakeCine. Proyecto ficticio sin fines comerciales.
+  </div>
+</footer>

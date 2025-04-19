@@ -9,6 +9,8 @@ import Premieres from "./premieres.astro";
 import Services from "../components/home/services.astro";
 import Footer from "../components/home/footer.astro";
 import '@/styles/globals.css'
+import Billboardcomponent from "@/components/billboard/billboardcomponent.astro";
+import Premierescomponent from "@/components/billboard/premierescomponent.astro";
 
 
 
@@ -19,9 +21,9 @@ import '@/styles/globals.css'
 <Layout>
   <ReactNavbar client:visible />
   <Home />
-  <Billboard />
+  <Billboardcomponent />
   <Food />
-  <Premieres />
+  <Premierescomponent />
   <Services/>
   <Warning />
   <Footer />

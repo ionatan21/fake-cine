@@ -9,7 +9,13 @@ export default function GalleryImages() {
   const [selectedId, setselectedId] = useState<string | null>(null);
 
   return (
-    <>
+    <section className="w-screen mt-6 z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6">
+      <h1 className="text-4xl mt-8 sm:text-5xl font-bold text-center">
+        Galería de Imágenes
+      </h1>
+      <p className="text-lg mb-4 text-center max-w-xl">
+        Nuestras Instalaciones
+      </p>
       <div className="parent">
         {images.map((image, index) => (
           <motion.button
@@ -38,6 +44,6 @@ export default function GalleryImages() {
           onClose={() => setSelectedImage(null)}
         />
       )}
-    </>
+    </section>
   );
 }

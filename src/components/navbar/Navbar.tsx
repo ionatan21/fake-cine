@@ -34,7 +34,7 @@ const navItems = [
     name: "Galería",
     href: "/gallery",
     content: [
-      { label: "Nuestras instalaciones", href: "/galeria#instalaciones" },
+      { label: "Nuestras instalaciones", href: "/gallery" },
     ],
   },
   {
@@ -106,6 +106,7 @@ export default function ReactNavbar() {
           initial={{ opacity: isMobile ? 0 : 1 }}
           animate={{ opacity: isMobile ? (isMenuOpen ? 1 : 0) : 1 }}
           transition={{ duration: 0.3, ease: "easeInOut", delay: 0.1 }}
+       
         >
           {navItems.map((item, index) => (
             <NavItem

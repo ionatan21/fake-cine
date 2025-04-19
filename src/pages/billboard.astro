@@ -2,39 +2,16 @@
 import { getCollection } from "astro:content";
 import Movie from "@/components/ui/movie/movie";
 import Layout from "@/layouts/Layout.astro";
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 import ReactNavbar from "@/components/navbar/Navbar";
+import Footer from "@/components/home/footer.astro";
+import Billboardcomponent from "@/components/billboard/billboardcomponent.astro";
 
 const movies = await getCollection("movies");
 ---
 
 <Layout>
   <ReactNavbar client:visible />
-  <section
-    class="w-screen z-10 min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white p-6"
-  >
-    <h1 class="text-4xl mt-14 font-bold mb-8">Cartelera</h1>
-    <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-1 w-full max-w-7xl">
-      {
-        movies
-          .filter((movie) => movie.data.released)
-          .map((movie) => (
-            <Movie
-              client:load
-              movie={{
-                id: movie.id,
-                title: movie.data.title,
-                movieslug: movie.data.movieslug,
-                language: movie.data.language,
-                duration: movie.data.duration,
-                format: movie.data.format,
-                posterURL: movie.data.posterURL,
-                body: movie.body,
-                age: movie.data.agelimit,
-              }}
-            />
-          ))
-      }
-    </div>
-  </section>
+  <Billboardcomponent />
+  <Footer />
 </Layout>
